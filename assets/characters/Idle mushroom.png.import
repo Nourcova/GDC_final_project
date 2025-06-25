@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xpr73xyo50xt"
-path="res://.godot/imported/Run (32x32).png-fa4f016570005f23e9f4d71ed82efcbf.ctex"
+uid="uid://cbdgeuh0d6cq5"
+path="res://.godot/imported/Idle mushroom.png-64e9d6df51f368159a6d870be7fea101.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Run (32x32).png"
-dest_files=["res://.godot/imported/Run (32x32).png-fa4f016570005f23e9f4d71ed82efcbf.ctex"]
+source_file="res://assets/characters/Idle mushroom.png"
+dest_files=["res://.godot/imported/Idle mushroom.png-64e9d6df51f368159a6d870be7fea101.ctex"]
 
 [params]
 

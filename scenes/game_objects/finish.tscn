@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://33s7v4a08dm"]
 
-[ext_resource type="Texture2D" uid="uid://c8n7gpt44oij" path="res://assets/End (Idle).png" id="1_5nbog"]
+[ext_resource type="Texture2D" uid="uid://c8n7gpt44oij" path="res://assets/game_elements/End (Idle).png" id="1_5nbog"]
 [ext_resource type="Script" uid="uid://c70c1f2dqlmn0" path="res://scripts/finish.gd" id="1_07gpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]

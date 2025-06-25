@@ -9,7 +9,7 @@ func _ready():
 	options.visible = false
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://scenes/Level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/Level_1.tscn")
 
 func _on_options_pressed():
 	main_buttons.visible = false

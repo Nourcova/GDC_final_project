@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8n7gpt44oij"
-path="res://.godot/imported/End (Idle).png-934df53d90b2ab29776348fa746f38d7.ctex"
+uid="uid://duwb0pjbufd6q"
+path="res://.godot/imported/Terrain (16x16).png-4227b1e431baf19618dc32dd311914a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/End (Idle).png"
-dest_files=["res://.godot/imported/End (Idle).png-934df53d90b2ab29776348fa746f38d7.ctex"]
+source_file="res://assets/terrain/Terrain (16x16).png"
+dest_files=["res://.godot/imported/Terrain (16x16).png-4227b1e431baf19618dc32dd311914a2.ctex"]
 
 [params]
 

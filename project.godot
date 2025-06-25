@@ -13,7 +13,6 @@ config_version=5
 config/name="ProjectGame"
 run/main_scene="uid://d4cclygq1ukwn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 
