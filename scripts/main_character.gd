@@ -8,6 +8,11 @@ var is_shrunk = false
 
 func jump():
 	velocity.y = JUMP_VELOCITY
+	
+func jump_side(x):
+	velocity.y = JUMP_VELOCITY
+	velocity.x = x
+	
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_CTRL):
 		if not is_shrunk:

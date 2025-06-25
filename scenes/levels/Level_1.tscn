@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsi0nhxkx0f3q"]
+[gd_scene load_steps=21 format=3 uid="uid://dsi0nhxkx0f3q"]
 
 [ext_resource type="Texture2D" uid="uid://c7h8ggvamh8e4" path="res://assets/backgrounds/Green.png" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://duwb0pjbufd6q" path="res://assets/terrain/Terrain (16x16).png" id="2_sugp2"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://dmsr6re5jl88q" path="res://scripts/fall_area.gd" id="9_crfhr"]
 [ext_resource type="Texture2D" uid="uid://bm8afnws5xkoi" path="res://assets/game_elements/8bit-heart.png" id="9_f63rn"]
 [ext_resource type="PackedScene" uid="uid://bo3pl0xhk6rkr" path="res://scenes/game_objects/enemy.tscn" id="10_rp28y"]
+[ext_resource type="Script" uid="uid://cand7hbefu1n3" path="res://scripts/pause.gd" id="12_sha1w"]
+[ext_resource type="FontFile" uid="uid://dmdpjdqofcct6" path="res://assets/fonts/GrapeSoda.ttf" id="12_y54f7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbgi4"]
 texture = ExtResource("2_sugp2")
@@ -192,6 +194,38 @@ sources/0 = SubResource("TileSetAtlasSource_tbgi4")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a4osw"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ra48x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y54f7"]
+bg_color = Color(0.74978, 0.74978, 0.74978, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.227451)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sha1w"]
+bg_color = Color(0.644663, 0.644663, 0.644663, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.227451)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hknnn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.227451)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
 [node name="Node" type="Node"]
 
 [node name="Scene Objects" type="Node" parent="."]
@@ -279,9 +313,10 @@ script = ExtResource("9_crfhr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene Objects/Area2D"]
 shape = SubResource("WorldBoundaryShape2D_a4osw")
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("hearts")]
 unique_name_in_owner = true
 script = ExtResource("6_tefeu")
+hearts = [NodePath("../UI/Hearts/HBoxContainer/Heart"), NodePath("../UI/Hearts/HBoxContainer/Heart2"), NodePath("../UI/Hearts/HBoxContainer/Heart3")]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -340,25 +375,95 @@ layout_mode = 2
 texture = ExtResource("9_f63rn")
 expand_mode = 2
 
-[node name="Heart3" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
-texture_filter = 1
-layout_mode = 2
-texture = ExtResource("9_f63rn")
-expand_mode = 2
-
 [node name="Heart2" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("9_f63rn")
 expand_mode = 2
 
+[node name="Heart3" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("9_f63rn")
+expand_mode = 2
+
 [node name="Pause" type="Node" parent="UI"]
+script = ExtResource("12_sha1w")
 
 [node name="Pause_panel" type="Panel" parent="UI/Pause"]
+unique_name_in_owner = true
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MainButtons" type="VBoxContainer" parent="UI/Pause/Pause_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.603
+anchor_right = 0.5
+anchor_bottom = 0.603
+offset_left = -175.0
+offset_top = -115.744
+offset_right = 175.0
+offset_bottom = 115.256
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Resume" type="Button" parent="UI/Pause/Pause_panel/MainButtons"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ra48x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y54f7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sha1w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hknnn")
+text = "Resume"
+
+[node name="Menu" type="Button" parent="UI/Pause/Pause_panel/MainButtons"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ra48x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y54f7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sha1w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hknnn")
+text = "Go to main menu"
+
+[node name="Label" type="Label" parent="UI/Pause/Pause_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.173
+anchor_right = 0.5
+anchor_bottom = 0.173
+offset_left = -153.5
+offset_top = -44.104
+offset_right = 153.5
+offset_bottom = 23.896
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("12_y54f7")
+theme_override_font_sizes/font_size = 104
+text = "Game Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="Scene Objects/Area2D" to="Scene Objects/Area2D" method="_on_body_entered"]
+[connection signal="pressed" from="UI/Pause/Pause_panel/MainButtons/Resume" to="UI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Pause/Pause_panel/MainButtons/Menu" to="UI/Pause" method="_on_menu_pressed"]
