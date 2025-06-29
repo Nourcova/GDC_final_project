@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4cclygq1ukwn"]
+[gd_scene load_steps=19 format=3 uid="uid://d4cclygq1ukwn"]
 
 [ext_resource type="Script" uid="uid://i3i6nipy34lf" path="res://scripts/main_menu.gd" id="1_xn6kt"]
 [ext_resource type="AudioStream" uid="uid://cmuawycgyf722" path="res://assets/music/Jammin Bread.mp3" id="2_isoef"]
@@ -6,6 +6,10 @@
 [ext_resource type="FontFile" uid="uid://dmdpjdqofcct6" path="res://assets/fonts/GrapeSoda.ttf" id="4_vovv2"]
 [ext_resource type="Script" uid="uid://dcpxvi0m3ekjv" path="res://scripts/audio_control.gd" id="5_1k4da"]
 [ext_resource type="Script" uid="uid://b8s2qmxakr7gh" path="res://scripts/fullscreen_control.gd" id="6_bbqo6"]
+[ext_resource type="Texture2D" uid="uid://4gkaevv5utu7" path="res://assets/game_elements/794899.svg" id="7_isoef"]
+[ext_resource type="Texture2D" uid="uid://daedspmkuaf14" path="res://assets/characters/Jump (32x32).png" id="8_qgo02"]
+[ext_resource type="Texture2D" uid="uid://djlyv7v2n7880" path="res://assets/game_elements/space.svg" id="9_1k4da"]
+[ext_resource type="Texture2D" uid="uid://by7yjuxck550i" path="res://assets/characters/Fall (32x32).png" id="10_bbqo6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wu84c"]
 texture = ExtResource("3_qgo02")
@@ -229,6 +233,128 @@ offset_right = 361.0
 offset_bottom = 176.0
 text = "FullScreen"
 script = ExtResource("6_bbqo6")
+
+[node name="Shrink_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.206
+anchor_top = 0.595
+anchor_right = 0.206
+anchor_bottom = 0.595
+offset_left = -111.312
+offset_top = -94.56
+offset_right = 110.688
+offset_bottom = 94.44
+grow_vertical = 2
+
+[node name="Shrink" type="Label" parent="Shrink_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.173
+anchor_right = 0.5
+anchor_bottom = 0.173
+offset_left = -62.0
+offset_top = -37.697
+offset_right = 63.0
+offset_bottom = 13.303
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("4_vovv2")
+theme_override_font_sizes/font_size = 50
+text = "Shrink"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Shrink_panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 88.0
+offset_top = 60.0
+offset_right = 167.0
+offset_bottom = 139.0
+texture = ExtResource("7_isoef")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Shrink_panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -12.0
+offset_top = 38.0
+offset_right = 105.0
+offset_bottom = 155.0
+texture = ExtResource("8_qgo02")
+
+[node name="TextureRect3" type="TextureRect" parent="Shrink_panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 161.0
+offset_top = 62.0
+offset_right = 228.0
+offset_bottom = 129.0
+texture = ExtResource("8_qgo02")
+
+[node name="Jump_panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.206
+anchor_top = 0.595
+anchor_right = 0.206
+anchor_bottom = 0.595
+offset_left = 564.688
+offset_top = -94.56
+offset_right = 786.688
+offset_bottom = 94.44
+grow_vertical = 2
+
+[node name="Jump" type="Label" parent="Jump_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.173
+anchor_right = 0.5
+anchor_bottom = 0.173
+offset_left = -62.0
+offset_top = -26.697
+offset_right = 63.0
+offset_bottom = 24.303
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("4_vovv2")
+theme_override_font_sizes/font_size = 50
+text = "Jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Jump_panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 72.0
+offset_top = 64.0
+offset_right = 151.0
+offset_bottom = 143.0
+texture = ExtResource("9_1k4da")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Jump_panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -10.0
+offset_top = 55.0
+offset_right = 76.0
+offset_bottom = 141.0
+texture = ExtResource("8_qgo02")
+
+[node name="TextureRect3" type="TextureRect" parent="Jump_panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 148.0
+offset_top = 65.0
+offset_right = 215.0
+offset_bottom = 132.0
+texture = ExtResource("10_bbqo6")
 
 [connection signal="pressed" from="MainButtons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButtons/Options" to="." method="_on_options_pressed"]
