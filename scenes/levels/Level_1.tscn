@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dsi0nhxkx0f3q"]
+[gd_scene load_steps=23 format=3 uid="uid://dsi0nhxkx0f3q"]
 
 [ext_resource type="Texture2D" uid="uid://c7h8ggvamh8e4" path="res://assets/backgrounds/Green.png" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://ccv02266whveg" path="res://assets/PineForestParallax/MorningLayer6.png" id="1_vqsrt"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://duwb0pjbufd6q" path="res://assets/terrain/Terrain (16x16).png" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dvgnytrsbmi7n" path="res://scenes/game_objects/main_character.tscn" id="3_sugp2"]
 [ext_resource type="Texture2D" uid="uid://ci10r4t4y36o1" path="res://assets/PineForestParallax/MorningLayer2.png" id="3_vx33d"]
-[ext_resource type="Script" uid="uid://2xyqjxrvqv1o" path="res://scripts/main_character.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bxmuuwhu6jroy" path="res://scenes/game_objects/collectable.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://ddirr3btkqoxa" path="res://scripts/game_manager.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bkyc44rdexjqt" path="res://scenes/levels/Level_2.tscn" id="7_bmqp6"]
@@ -300,7 +299,6 @@ layer_0/tile_data = PackedInt32Array(589824, 0, 5, 589825, 458752, 0, 589826, 45
 
 [node name="CharacterBody2D" parent="Scene Objects" instance=ExtResource("3_sugp2")]
 position = Vector2(118, 9)
-script = ExtResource("4_jyhfs")
 
 [node name="Camera2D" type="Camera2D" parent="Scene Objects/CharacterBody2D"]
 position = Vector2(27, 32)
