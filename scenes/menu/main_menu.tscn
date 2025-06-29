@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dmdpjdqofcct6" path="res://assets/fonts/GrapeSoda.ttf" id="4_vovv2"]
 [ext_resource type="Script" uid="uid://dcpxvi0m3ekjv" path="res://scripts/audio_control.gd" id="5_1k4da"]
 [ext_resource type="Script" uid="uid://b8s2qmxakr7gh" path="res://scripts/fullscreen_control.gd" id="6_bbqo6"]
-[ext_resource type="Texture2D" uid="uid://4gkaevv5utu7" path="res://assets/game_elements/794899.svg" id="7_isoef"]
+[ext_resource type="Texture2D" uid="uid://bd40jnhe5pswm" path="res://assets/game_elements/ctrl.svg" id="7_1k4da"]
 [ext_resource type="Texture2D" uid="uid://daedspmkuaf14" path="res://assets/characters/Jump (32x32).png" id="8_qgo02"]
 [ext_resource type="Texture2D" uid="uid://djlyv7v2n7880" path="res://assets/game_elements/space.svg" id="9_1k4da"]
 [ext_resource type="Texture2D" uid="uid://by7yjuxck550i" path="res://assets/characters/Fall (32x32).png" id="10_bbqo6"]
@@ -274,7 +274,7 @@ offset_left = 88.0
 offset_top = 60.0
 offset_right = 167.0
 offset_bottom = 139.0
-texture = ExtResource("7_isoef")
+texture = ExtResource("7_1k4da")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Shrink_panel"]
